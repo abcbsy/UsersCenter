@@ -1,0 +1,11 @@
+H:\Projects\UsersCenter\UsersCenter.Web\bin\Debug\netcoreapp2.0\UsersCenter.Web.deps.json
+H:\Projects\UsersCenter\UsersCenter.Web\bin\Debug\netcoreapp2.0\UsersCenter.Web.runtimeconfig.json
+H:\Projects\UsersCenter\UsersCenter.Web\bin\Debug\netcoreapp2.0\UsersCenter.Web.runtimeconfig.dev.json
+H:\Projects\UsersCenter\UsersCenter.Web\bin\Debug\netcoreapp2.0\UsersCenter.Web.dll
+H:\Projects\UsersCenter\UsersCenter.Web\bin\Debug\netcoreapp2.0\UsersCenter.Web.pdb
+H:\Projects\UsersCenter\UsersCenter.Web\obj\Debug\netcoreapp2.0\UsersCenter.Web.csprojResolveAssemblyReference.cache
+H:\Projects\UsersCenter\UsersCenter.Web\obj\Debug\netcoreapp2.0\UsersCenter.Web.csproj.CoreCompileInputs.cache
+H:\Projects\UsersCenter\UsersCenter.Web\obj\Debug\netcoreapp2.0\UsersCenter.Web.AssemblyInfoInputs.cache
+H:\Projects\UsersCenter\UsersCenter.Web\obj\Debug\netcoreapp2.0\UsersCenter.Web.AssemblyInfo.cs
+H:\Projects\UsersCenter\UsersCenter.Web\obj\Debug\netcoreapp2.0\UsersCenter.Web.dll
+H:\Projects\UsersCenter\UsersCenter.Web\obj\Debug\netcoreapp2.0\UsersCenter.Web.pdb

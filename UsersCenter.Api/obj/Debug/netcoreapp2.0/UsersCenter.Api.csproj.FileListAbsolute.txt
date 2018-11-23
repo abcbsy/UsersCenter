@@ -1,0 +1,17 @@
+H:\Projects\UsersCenter\UsersCenter.Api\bin\Debug\netcoreapp2.0\UsersCenter.Api.deps.json
+H:\Projects\UsersCenter\UsersCenter.Api\bin\Debug\netcoreapp2.0\UsersCenter.Api.runtimeconfig.json
+H:\Projects\UsersCenter\UsersCenter.Api\bin\Debug\netcoreapp2.0\UsersCenter.Api.runtimeconfig.dev.json
+H:\Projects\UsersCenter\UsersCenter.Api\bin\Debug\netcoreapp2.0\UsersCenter.Api.dll
+H:\Projects\UsersCenter\UsersCenter.Api\obj\Debug\netcoreapp2.0\UsersCenter.Api.csprojResolveAssemblyReference.cache
+H:\Projects\UsersCenter\UsersCenter.Api\obj\Debug\netcoreapp2.0\UsersCenter.Api.csproj.CoreCompileInputs.cache
+H:\Projects\UsersCenter\UsersCenter.Api\obj\Debug\netcoreapp2.0\UsersCenter.Api.AssemblyInfoInputs.cache
+H:\Projects\UsersCenter\UsersCenter.Api\obj\Debug\netcoreapp2.0\UsersCenter.Api.AssemblyInfo.cs
+H:\Projects\UsersCenter\UsersCenter.Api\bin\Debug\netcoreapp2.0\UsersCenter.Api.pdb
+H:\Projects\UsersCenter\UsersCenter.Api\obj\Debug\netcoreapp2.0\UsersCenter.Api.dll
+H:\Projects\UsersCenter\UsersCenter.Api\obj\Debug\netcoreapp2.0\UsersCenter.Api.pdb
+H:\Projects\UsersCenter\UsersCenter.Api\bin\Debug\netcoreapp2.0\UsersCenter.Common.dll
+H:\Projects\UsersCenter\UsersCenter.Api\bin\Debug\netcoreapp2.0\UsersCenter.Common.pdb
+H:\Projects\UsersCenter\UsersCenter.Api\bin\Debug\netcoreapp2.0\UsersCenter.Models.dll
+H:\Projects\UsersCenter\UsersCenter.Api\bin\Debug\netcoreapp2.0\UsersCenter.Services.dll
+H:\Projects\UsersCenter\UsersCenter.Api\bin\Debug\netcoreapp2.0\UsersCenter.Services.pdb
+H:\Projects\UsersCenter\UsersCenter.Api\bin\Debug\netcoreapp2.0\UsersCenter.Models.pdb

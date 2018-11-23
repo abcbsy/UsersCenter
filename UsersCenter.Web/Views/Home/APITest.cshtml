@@ -1,0 +1,159 @@
+﻿@{
+    ViewData["Title"] = "API 测试";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>请输入API信息：</h3>
+<script src="~/js/md5.js" asp-append-version="true"></script>
+<table width="100%">
+    <tr>
+        <td width="150px">获取AppToken地址：</td>
+        <td><input id="AppTokenURL" type="text" value="http://localhost:53342/api/AppClients/GetToken?appId=testid&appSecret=testsecret" /><button onclick="getAppToken()">获取AppToken</button></td>
+    </tr>
+    <tr>
+        <td>App Token：</td>
+        <td><input id="AppToken" type="text" value="" /></td>
+    </tr>
+    <tr>
+        <td>登录账号：</td>
+        <td><input id="UserAccount" type="text" value="jack" /></td>
+    </tr>
+    <tr>
+        <td>登录密码：</td>
+        <td><input id="Password" type="text" value="123456" /></td>
+    </tr>
+    <tr>
+        <td width="150px">登录地址：</td>
+        <td><input id="LoginURL" type="text" value="http://localhost:53342/api/Users/Login" /><button onclick="getUserToken()">获取UserToken</button></td>
+    </tr>
+    <tr>
+        <td>User Token：</td>
+        <td><input id="UserToken" type="text" value="" /></td>
+    </tr>
+    <tr>
+        <td>API地址：</td>
+        <td><input id="ApiURL" type="text" value="http://localhost:53342/" /></td>
+    </tr>
+    <tr>
+        <td>请求类型：</td>
+        <td><select id="RequestType"><option value="GET">GET</option><option value="POST">POST</option></select></td>
+    </tr>
+    <tr>
+        <td>Body：</td>
+        <td><textarea id="RequestBody" rows="5"></textarea></td>
+    </tr>
+    <tr>
+        <td>Response：</td>
+        <td><textarea id="Response" rows="5"></textarea></td>
+    </tr>
+    <tr>
+        <td colspan="2"><button onclick="send()">发送</button></td>
+    </tr>
+</table>
+<style type="text/css">
+    input, textarea, select {
+        width: 600px;
+    }
+</style>
+<script type="text/javascript">
+    var appkey = 'testkey';
+    //生成随机数
+    function getNonceStr() {
+        var data = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        var result = "";
+        for (var i = 0; i < 15; i++) {
+            var r = Math.floor(Math.random() * 62);     //取得0-62间的随机数，目的是以此当下标取数组data里的值！
+            result += data[r];        //输出15次随机数的同时，让rrr加15次，就是15位的随机字符串了。
+        }
+        var now = new Date();
+        var day = now.getDate() + "" + now.getHours() + "" + now.getMinutes() + "" + now.getSeconds();
+        return day + result;
+    }
+    //生成签名
+    function getSign(appkey, apptoken, noncestr, usertoken) {
+
+        var str = "appkey=" + appkey + "&apptoken=" + apptoken + "&noncestr=" + noncestr + (!usertoken ? "" : "&usertoken=" + usertoken);
+
+        var sign = hex_md5(str).toUpperCase();
+
+        return sign;
+    }
+    function getAppToken() {
+        $.ajax({
+            type: "get",
+            url: $('#AppTokenURL').val(),
+            dataType: "json",
+            async: false,
+            cache: false,
+            crossDomain: true,
+            success: function (response) {
+                if (response.Status == 1) {
+                    $('#AppToken').val(response.Data);
+                }
+                else {
+                    alert(response.Msg);
+                }
+            }
+        });
+
+    }
+
+    function getUserToken() {
+        apiRequest($('#LoginURL').val(), 'post', appkey, $('#AppToken').val(), null, false, { UserAccount: $('#UserAccount').val(), Password: $('#Password').val(), VerifyCode: '' }, function (response) {
+            if (response.Status == 1) {
+                $('#UserToken').val(response.Data.UserToken);
+            }
+            else {
+                alert(response.Msg);
+            }
+        });
+
+    }
+    function send() {
+
+        apiRequest($('#ApiURL').val(), $('#RequestType').val(), appkey, $('#AppToken').val(), $('#UserToken').val(), false, $('#RequestBody').val(), function (response) {
+            $('#Response').val(JSON.stringify(response));
+        });
+
+    }
+    function apiRequest(apiUrl, type, appKey, appToken, userToken, async, data, successCallBack) {
+        var noncestr = getNonceStr();
+        var requestData = {
+            type: type,
+            url: apiUrl,
+            headers: {
+                "apptoken": appToken,
+                "noncestr": noncestr,
+                "usertoken": userToken,
+                "sign": getSign(appKey, appToken, noncestr, userToken)
+            },
+            success: function (response) {
+                if (successCallBack)
+                    successCallBack(response);
+            }
+        };
+
+        var contentType = "";
+
+        //如果是DELETE 请求则数据附加到地址栏
+        if (type.toLowerCase() == "delete") {
+            requestData.url = requestData.url + "?" + $.param(data);
+            data = {};
+        }
+        //POST,PUT 采用Playload方式提交
+        else if (type.toLowerCase() != "get") {
+            contentType = "application/json; charset=utf-8";
+            //if ($.isPlainObject(data) == false)
+                data = JSON.stringify(data);
+        }
+
+        requestData.cache = true;//不能用缓存(防止请求同一个API时，返回上一次的数据)
+        requestData.data = data;//请求的数据
+        requestData.async = async;//是否异步
+        requestData.contentType = contentType;// 很重要
+        requestData.dataType = "json";//指定数据类型
+        requestData.crossDomain = true;//跨域请求
+
+        $.ajax(requestData);
+
+    }
+</script>
