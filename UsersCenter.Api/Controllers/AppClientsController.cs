@@ -16,7 +16,7 @@ namespace UsersCenter.Api.Controllers
         [HttpGet, Route("GetToken")]
         public ApiResult GetToken(string appId, string appSecret)
         {
-            var appClient = new AppClientDto();
+            var appClient = new AppDto();
             if (ApiSecurityService.CheckAppClient(appId, appSecret, out appClient) == false)
             {
                 return EnumApiStatus.ApiAppClientUnauthorized.ToApiResultForApiStatus();

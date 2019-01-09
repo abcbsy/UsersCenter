@@ -1,0 +1,5 @@
+H:\Projects\UsersCenter\UsersCenter.Api
+--output-path=obj\Any CPU\Release\netcoreapp2.0\
+--application-name=UsersCenter.Api
+--content-root=H:\Projects\UsersCenter\UsersCenter.Api
+--file=

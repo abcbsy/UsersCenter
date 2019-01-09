@@ -1,22 +1,16 @@
-﻿using UsersCenter.Api.Models;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Mvc.Filters;
 using System;
-using System.Collections.ObjectModel;
-using System.Net.Http;
-using System.Text;
-using System.Web;
+using System.Linq;
+using System.Threading.Tasks;
+using UsersCenter.Api.Models;
+using UsersCenter.Models;
 using UsersCenter.Services;
 using UsersCenter.Services.DTOs;
-using UsersCenter.Common;
-using Microsoft.Extensions.Options;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc.Authorization;
-using Microsoft.AspNetCore.Authorization.Infrastructure;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Filters;
-using System.Linq;
-using Microsoft.AspNetCore.Mvc;
-using UsersCenter.Models;
 
 namespace UsersCenter.Api.Filters
 {

@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Common;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UsersCenter.Api.Models;
-using UsersCenter.Common;
+using UsersCenter.Services;
 using UsersCenter.Services.DTOs;
 
 namespace UsersCenter.Api.Controllers
@@ -17,20 +18,6 @@ namespace UsersCenter.Api.Controllers
     [Route("api/[controller]")]
     public class UsersController : Controller
     {
-        /// <summary>
-        /// 若本站点没有登录，则重定向到此页
-        /// </summary>
-        /// <param name="returnUrl"></param>
-        /// <returns></returns>
-        [HttpGet]
-        [Route("Login")]
-        public string Login(string ReturnUrl = null)
-        {
-            SecurityHelper.Login(new Services.DTOs.UserLoginDto { UserAccount = "jack", Password= "1,2,3" });
-            return "ok";
-        }
-        
-
         [HttpGet]
         [Route("Logout")]
         public ApiResult Logout()
@@ -39,10 +26,8 @@ namespace UsersCenter.Api.Controllers
             return EnumApiStatus.BizOK.ToApiResult(null, "退出成功！");
         }
         /// <summary>
-        /// 本页的登录接口
+        /// 登录接口
         /// </summary>
-        /// <param name="modle"></param>
-        /// <returns></returns>
         [HttpPost]
         [Route("Login")]
         public ApiResult Login([FromBody]UserLoginDto request)

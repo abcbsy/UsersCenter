@@ -1,11 +1,8 @@
-﻿using KMRecipePlatform.Models;
+﻿using Common;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using UsersCenter.Common;
 using UsersCenter.Services.DTOs;
 
 namespace UsersCenter.Services
@@ -40,9 +37,9 @@ namespace UsersCenter.Services
         /// <param name="appId"></param>
         /// <param name="appSecret"></param>
         /// <returns></returns>
-        public static bool CheckAppClient(string appId, string appSecret, out AppClientDto appClient)
+        public static bool CheckAppClient(string appId, string appSecret, out AppDto appClient)
         {
-            appClient = new AppClientDto();
+            appClient = new AppDto();
 
             if (string.IsNullOrEmpty(appId) || string.IsNullOrEmpty(appSecret))
             {
@@ -115,7 +112,7 @@ namespace UsersCenter.Services
         /// <returns></returns>
         public static bool CheckUserTicket(UserTicketDto ticket)
         {
-            if (ticket == null || string.IsNullOrEmpty(ticket.UserID))
+            if (ticket == null || ticket.ID == null)
             {
                 return false;
             }
@@ -176,7 +173,7 @@ namespace UsersCenter.Services
         /// <summary>
         /// 保存token
         /// </summary>
-        public static void SetAppToken(string appToken, AppClientDto account)
+        public static void SetAppToken(string appToken, AppDto account)
         {
             var AppTokenCacheKey = GetAppTokenCacheKey(appToken);
             var token = CreateAppToken(appToken, account);
@@ -189,7 +186,7 @@ namespace UsersCenter.Services
         /// <param name="appToken"></param>
         /// <param name="appClient"></param>
         /// <returns></returns>
-        public static TokenDto CreateAppToken(string appToken, AppClientDto appClient)
+        public static TokenDto CreateAppToken(string appToken, AppDto appClient)
         {
             var nowTime = DateTime.Now;
             var token = new TokenDto()
@@ -197,10 +194,10 @@ namespace UsersCenter.Services
                 AppKey = appClient.AppKey,
                 Token = appToken,
                 AppID = appClient.AppID,
-                ClientType = appClient.ClientType,
+                AppType = appClient.AppType,
                 Time = nowTime,
                 ExpireDate = TimeSpan.FromSeconds(TokenCacheSeconds),
-                OrganizationID = appClient.OrgID
+                OrganizationID = appClient.OrganizationID
             };
 
             return token;
@@ -271,10 +268,10 @@ namespace UsersCenter.Services
         /// </summary>
         /// <param name="appId"></param>
         /// <returns></returns>
-        public static AppClientDto GetAppClientByAppID(string appId)
+        public static AppDto GetAppClientByAppID(string appId)
         {
 
-            return new AppClientService().GetAllFromCache().FirstOrDefault(i => i.AppID == appId);
+            return new AppsService().GetAllFromCache().FirstOrDefault(i => i.AppID == appId);
         }
 
         /// <summary>
@@ -411,7 +408,7 @@ namespace UsersCenter.Services
                 var account = GetAppClientByAppID(token.AppID);
                 if (account != null)
                 {
-                    return account.IgnoreApiAuth.HasValue ? account.IgnoreApiAuth.Value : false;
+                    return account.IgnoreAuthentication.HasValue ? account.IgnoreAuthentication.Value : false;
                 }
             }
 
@@ -430,7 +427,7 @@ namespace UsersCenter.Services
                 var account = GetAppClientByAppID(token.AppID);
                 if (account != null)
                 {
-                    return account.IgnoreApiAuth.HasValue ? account.IgnoreApiAuth.Value : false;
+                    return account.IgnoreAuthentication.HasValue ? account.IgnoreAuthentication.Value : false;
                 }
             }
 
@@ -442,7 +439,7 @@ namespace UsersCenter.Services
             var account = GetAppClientByAppID(appId);
             if (account != null)
             {
-                return account.IgnoreApiAuth.HasValue ? account.IgnoreApiAuth.Value : false;
+                return account.IgnoreAuthentication.HasValue ? account.IgnoreAuthentication.Value : false;
             }
             return false;
         }

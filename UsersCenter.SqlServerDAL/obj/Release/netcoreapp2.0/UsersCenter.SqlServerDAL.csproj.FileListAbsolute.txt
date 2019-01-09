@@ -1,0 +1,13 @@
+H:\Projects\UsersCenter\UsersCenter.SqlServerDAL\bin\Release\netcoreapp2.0\UsersCenter.SqlServerDAL.deps.json
+H:\Projects\UsersCenter\UsersCenter.SqlServerDAL\bin\Release\netcoreapp2.0\UsersCenter.SqlServerDAL.dll
+H:\Projects\UsersCenter\UsersCenter.SqlServerDAL\bin\Release\netcoreapp2.0\UsersCenter.SqlServerDAL.pdb
+H:\Projects\UsersCenter\UsersCenter.SqlServerDAL\bin\Release\netcoreapp2.0\UsersCenter.IDAL.dll
+H:\Projects\UsersCenter\UsersCenter.SqlServerDAL\bin\Release\netcoreapp2.0\UsersCenter.Models.dll
+H:\Projects\UsersCenter\UsersCenter.SqlServerDAL\bin\Release\netcoreapp2.0\UsersCenter.IDAL.pdb
+H:\Projects\UsersCenter\UsersCenter.SqlServerDAL\bin\Release\netcoreapp2.0\UsersCenter.Models.pdb
+H:\Projects\UsersCenter\UsersCenter.SqlServerDAL\obj\Release\netcoreapp2.0\UsersCenter.SqlServerDAL.csprojResolveAssemblyReference.cache
+H:\Projects\UsersCenter\UsersCenter.SqlServerDAL\obj\Release\netcoreapp2.0\UsersCenter.SqlServerDAL.csproj.CoreCompileInputs.cache
+H:\Projects\UsersCenter\UsersCenter.SqlServerDAL\obj\Release\netcoreapp2.0\UsersCenter.SqlServerDAL.AssemblyInfoInputs.cache
+H:\Projects\UsersCenter\UsersCenter.SqlServerDAL\obj\Release\netcoreapp2.0\UsersCenter.SqlServerDAL.AssemblyInfo.cs
+H:\Projects\UsersCenter\UsersCenter.SqlServerDAL\obj\Release\netcoreapp2.0\UsersCenter.SqlServerDAL.dll
+H:\Projects\UsersCenter\UsersCenter.SqlServerDAL\obj\Release\netcoreapp2.0\UsersCenter.SqlServerDAL.pdb

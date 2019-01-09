@@ -12,12 +12,12 @@ namespace UsersCenter.Services.DTOs
         public string AppID { get; set; }
         public string AppKey { get; set; }
         
-        public string OrganizationID { get; set; }
+        public int OrganizationID { get; set; }
 
         public TimeSpan ExpireDate { get; set; }
 
         public string Token { get; set; }
 
-        public string ClientType { get; set; }
+        public int AppType { get; set; }
     }
 }

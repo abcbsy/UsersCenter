@@ -123,7 +123,7 @@ namespace UsersCenter.Api
                         }
                     }
                 }
-                return new UserTicketDto() { UserID = "", UserType = EnumUserType.Unknown };
+                return new UserTicketDto() { ID = null, UserType = EnumUserType.Unknown };
             }
         }
 
@@ -135,7 +135,7 @@ namespace UsersCenter.Api
         {
             var user = LoginUser;
 
-            if (user != null && user.UserID != "" && user.UserType == userType)  //没有设置用户角色，则通过
+            if (user != null && user.ID != null && user.UserType == userType)  //没有设置用户角色，则通过
                 return true;
             return false;
         }
@@ -145,7 +145,7 @@ namespace UsersCenter.Api
         /// </summary>
         public static UserTicketDto Login(UserLoginDto user)
         {
-            UserService userService = new UserService();
+            UsersService userService = new UsersService();
             var ticket = userService.Login(user);
             HttpContextHelper.HttpContext.Items["LoginUser"] = ticket;
             ApiSecurityService.SetUserTicket(ticket);

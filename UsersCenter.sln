@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersCenter.Web", "UsersCenter.Web\UsersCenter.Web.csproj", "{CB4961C8-FA18-447A-96B8-0E4AA3850C5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsersCenter.Web", "UsersCenter.Web\UsersCenter.Web.csproj", "{CB4961C8-FA18-447A-96B8-0E4AA3850C5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersCenter.Api", "UsersCenter.Api\UsersCenter.Api.csproj", "{5FDDC516-80B9-485C-8CAA-74E60B273900}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsersCenter.Api", "UsersCenter.Api\UsersCenter.Api.csproj", "{5FDDC516-80B9-485C-8CAA-74E60B273900}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersCenter.Common", "UsersCenter.Common\UsersCenter.Common.csproj", "{F8A25EDE-17B8-428E-94D1-834E0A331731}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsersCenter.Common", "UsersCenter.Common\UsersCenter.Common.csproj", "{F8A25EDE-17B8-428E-94D1-834E0A331731}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersCenter.Models", "UsersCenter.Models\UsersCenter.Models.csproj", "{7317FB03-EA78-434D-ABAB-CD200A7564B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsersCenter.Models", "UsersCenter.Models\UsersCenter.Models.csproj", "{7317FB03-EA78-434D-ABAB-CD200A7564B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersCenter.Services", "UsersCenter.Services\UsersCenter.Services.csproj", "{7EB5287C-99E5-415E-9F20-FC739BD2EB05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsersCenter.Services", "UsersCenter.Services\UsersCenter.Services.csproj", "{7EB5287C-99E5-415E-9F20-FC739BD2EB05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersCenter.SqlServerDAL", "UsersCenter.SqlServerDAL\UsersCenter.SqlServerDAL.csproj", "{3A6C280B-9BDE-4112-9E92-9A37FB19BDCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersCenter.IDAL", "UsersCenter.IDAL\UsersCenter.IDAL.csproj", "{C0685A4B-9572-4993-B127-AA5F563E4C04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{7EB5287C-99E5-415E-9F20-FC739BD2EB05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EB5287C-99E5-415E-9F20-FC739BD2EB05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EB5287C-99E5-415E-9F20-FC739BD2EB05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A6C280B-9BDE-4112-9E92-9A37FB19BDCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A6C280B-9BDE-4112-9E92-9A37FB19BDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A6C280B-9BDE-4112-9E92-9A37FB19BDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A6C280B-9BDE-4112-9E92-9A37FB19BDCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0685A4B-9572-4993-B127-AA5F563E4C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0685A4B-9572-4993-B127-AA5F563E4C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0685A4B-9572-4993-B127-AA5F563E4C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0685A4B-9572-4993-B127-AA5F563E4C04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

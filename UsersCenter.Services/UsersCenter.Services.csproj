@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DALFactory" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\UsersCenter.Common\UsersCenter.Common.csproj" />
+    <ProjectReference Include="..\UsersCenter.IDAL\UsersCenter.IDAL.csproj" />
     <ProjectReference Include="..\UsersCenter.Models\UsersCenter.Models.csproj" />
   </ItemGroup>
 

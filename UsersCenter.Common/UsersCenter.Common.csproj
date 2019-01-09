@@ -5,7 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CacheHelper.cs" />
+    <Compile Remove="StringEncrypt.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CacheManager.Core" Version="1.1.2" />
+    <PackageReference Include="CacheManager.Microsoft.Extensions.Caching.Memory" Version="1.1.2" />
     <PackageReference Include="CacheManager.Serialization.Json" Version="1.1.2" />
     <PackageReference Include="CacheManager.StackExchange.Redis" Version="1.1.2" />
   </ItemGroup>

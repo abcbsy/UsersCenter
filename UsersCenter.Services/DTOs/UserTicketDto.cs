@@ -13,7 +13,7 @@ namespace UsersCenter.Services.DTOs
         /// <summary>
         /// 用户编号
         /// </summary>
-        public string UserID { get; set; }
+        public int? ID { get; set; }
 
         /// <summary>
         /// 用户账号

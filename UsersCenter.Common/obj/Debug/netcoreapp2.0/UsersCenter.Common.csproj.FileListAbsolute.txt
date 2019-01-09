@@ -1,9 +1,9 @@
 H:\Projects\UsersCenter\UsersCenter.Common\bin\Debug\netcoreapp2.0\UsersCenter.Common.deps.json
 H:\Projects\UsersCenter\UsersCenter.Common\bin\Debug\netcoreapp2.0\UsersCenter.Common.dll
+H:\Projects\UsersCenter\UsersCenter.Common\bin\Debug\netcoreapp2.0\UsersCenter.Common.pdb
 H:\Projects\UsersCenter\UsersCenter.Common\obj\Debug\netcoreapp2.0\UsersCenter.Common.csprojResolveAssemblyReference.cache
 H:\Projects\UsersCenter\UsersCenter.Common\obj\Debug\netcoreapp2.0\UsersCenter.Common.csproj.CoreCompileInputs.cache
 H:\Projects\UsersCenter\UsersCenter.Common\obj\Debug\netcoreapp2.0\UsersCenter.Common.AssemblyInfoInputs.cache
 H:\Projects\UsersCenter\UsersCenter.Common\obj\Debug\netcoreapp2.0\UsersCenter.Common.AssemblyInfo.cs
-H:\Projects\UsersCenter\UsersCenter.Common\bin\Debug\netcoreapp2.0\UsersCenter.Common.pdb
 H:\Projects\UsersCenter\UsersCenter.Common\obj\Debug\netcoreapp2.0\UsersCenter.Common.dll
 H:\Projects\UsersCenter\UsersCenter.Common\obj\Debug\netcoreapp2.0\UsersCenter.Common.pdb

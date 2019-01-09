@@ -1,0 +1,11 @@
+H:\Projects\UsersCenter\UsersCenter.IDAL\bin\Release\netcoreapp2.0\UsersCenter.IDAL.deps.json
+H:\Projects\UsersCenter\UsersCenter.IDAL\bin\Release\netcoreapp2.0\UsersCenter.IDAL.dll
+H:\Projects\UsersCenter\UsersCenter.IDAL\bin\Release\netcoreapp2.0\UsersCenter.IDAL.pdb
+H:\Projects\UsersCenter\UsersCenter.IDAL\bin\Release\netcoreapp2.0\UsersCenter.Models.dll
+H:\Projects\UsersCenter\UsersCenter.IDAL\bin\Release\netcoreapp2.0\UsersCenter.Models.pdb
+H:\Projects\UsersCenter\UsersCenter.IDAL\obj\Release\netcoreapp2.0\UsersCenter.IDAL.csprojResolveAssemblyReference.cache
+H:\Projects\UsersCenter\UsersCenter.IDAL\obj\Release\netcoreapp2.0\UsersCenter.IDAL.csproj.CoreCompileInputs.cache
+H:\Projects\UsersCenter\UsersCenter.IDAL\obj\Release\netcoreapp2.0\UsersCenter.IDAL.AssemblyInfoInputs.cache
+H:\Projects\UsersCenter\UsersCenter.IDAL\obj\Release\netcoreapp2.0\UsersCenter.IDAL.AssemblyInfo.cs
+H:\Projects\UsersCenter\UsersCenter.IDAL\obj\Release\netcoreapp2.0\UsersCenter.IDAL.dll
+H:\Projects\UsersCenter\UsersCenter.IDAL\obj\Release\netcoreapp2.0\UsersCenter.IDAL.pdb

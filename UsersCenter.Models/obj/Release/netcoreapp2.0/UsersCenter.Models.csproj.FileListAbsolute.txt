@@ -1,0 +1,9 @@
+H:\Projects\UsersCenter\UsersCenter.Models\bin\Release\netcoreapp2.0\UsersCenter.Models.deps.json
+H:\Projects\UsersCenter\UsersCenter.Models\bin\Release\netcoreapp2.0\UsersCenter.Models.dll
+H:\Projects\UsersCenter\UsersCenter.Models\bin\Release\netcoreapp2.0\UsersCenter.Models.pdb
+H:\Projects\UsersCenter\UsersCenter.Models\obj\Release\netcoreapp2.0\UsersCenter.Models.csprojResolveAssemblyReference.cache
+H:\Projects\UsersCenter\UsersCenter.Models\obj\Release\netcoreapp2.0\UsersCenter.Models.csproj.CoreCompileInputs.cache
+H:\Projects\UsersCenter\UsersCenter.Models\obj\Release\netcoreapp2.0\UsersCenter.Models.AssemblyInfoInputs.cache
+H:\Projects\UsersCenter\UsersCenter.Models\obj\Release\netcoreapp2.0\UsersCenter.Models.AssemblyInfo.cs
+H:\Projects\UsersCenter\UsersCenter.Models\obj\Release\netcoreapp2.0\UsersCenter.Models.dll
+H:\Projects\UsersCenter\UsersCenter.Models\obj\Release\netcoreapp2.0\UsersCenter.Models.pdb

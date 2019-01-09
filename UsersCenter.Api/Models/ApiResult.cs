@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Common;
+using System;
 using System.ComponentModel;
-using System.Linq;
-using System.Web;
-using UsersCenter.Common;
 
 namespace UsersCenter.Api.Models
 {

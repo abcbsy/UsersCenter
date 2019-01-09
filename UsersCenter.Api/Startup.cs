@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using CacheManager.Core;
+using CacheManager.Serialization.Json;
+using FrameworkCommon = Common;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Serialization;
-using UsersCenter.Api.Filters;
 
 namespace UsersCenter.Api
 {
@@ -27,18 +22,6 @@ namespace UsersCenter.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddAuthentication(option =>
-            //{
-            //    option.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            //    option.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            //})
-            //.AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, o =>
-            //{
-            //    o.Cookie.Name = "_UsersCenterCookie";
-            //    o.LoginPath = new PathString("/api/Users/SignIn");
-            //    o.LogoutPath = new PathString("/api/Users/SignOut");
-            //    o.AccessDeniedPath = new PathString("/Error/Forbidden");
-            //});
             services.AddMvc(option => {
                 //option.Filters.Add(typeof(UserCenterAuthorizeFilter));//注册身份认证过滤器，然后在需要执行身份认证的Controler或者Action上加[Authorize]特性
             })
@@ -73,7 +56,21 @@ namespace UsersCenter.Api
             });
             //app.UseAuthentication();//添加认证中间件
             app.ConfigureHttpContextHelper();
+            
+            FrameworkCommon.ConfigurationManager.Config(new Microsoft.Extensions.Configuration.ConfigurationBuilder()
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true).Build());
 
+            FrameworkCommon.CacheManager.ConfigMemoryCache(new MemoryCache(new MemoryCacheOptions()));
+            FrameworkCommon.CacheManager.ConfigMultilevelCache(CacheManager.Core.CacheFactory.Build("UsersCenter", settings =>
+            {
+                settings.WithRedisConfiguration("redis", "10.2.21.216:6380,ssl=false,password=", 10)
+                .WithMaxRetries(1000)//尝试次数
+                .WithRetryTimeout(100)//尝试超时时间
+                                      //.WithRedisBackplane("redis")//redis使用Back plane
+                .WithSerializer(typeof(JsonCacheSerializer), null)
+                .WithRedisCacheHandle("redis", true)//redis缓存handle
+                ;
+            })); 
         }
     }
 }
