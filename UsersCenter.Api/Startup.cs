@@ -63,7 +63,7 @@ namespace UsersCenter.Api
             FrameworkCommon.CacheManager.ConfigMemoryCache(new MemoryCache(new MemoryCacheOptions()));
             FrameworkCommon.CacheManager.ConfigMultilevelCache(CacheManager.Core.CacheFactory.Build("UsersCenter", settings =>
             {
-                settings.WithRedisConfiguration("redis", "10.2.21.216:6380,ssl=false,password=", 10)
+                settings.WithRedisConfiguration("redis", "10.2.29.41:6379,ssl=false,password=", 10)
                 .WithMaxRetries(1000)//尝试次数
                 .WithRetryTimeout(100)//尝试超时时间
                                       //.WithRedisBackplane("redis")//redis使用Back plane
